@@ -44,17 +44,38 @@ nav a:hover {
 
 header {
     position: relative;
+    display: flex;
+    flex-direction: row; /* Alinha os elementos em uma linha */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
     text-align: center;
-    background: url(img\ nav/img_fundo_milho.png) no-repeat center center;
-    background-size: cover;
+    background: url(img\ header/img_fundo_milho.png) no-repeat;
+    background-size: cover; /* Faz a imagem cobrir todo o header */
+    background-position: 50% 1%; /* Ajusta a posição horizontal e vertical */
     color: #ffffff;
-    padding: 2rem;
+    padding: 20px;
     width: 100%;
     height: 400px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+
+.img-fundo {
+    width: 300px; /* Tamanho da imagem */
+    height: 300px;
+    object-position: 37% 50%; /* Centraliza a imagem */
+    object-fit: cover; /* Garante que a imagem fique proporcional */
+    margin-left: 100px; /* Espaço entre a imagem e o texto */
+    border-radius: 20px; /* Deixa a imagem redonda */
+    border: 2px solid #ffffff; /* Borda branca ao redor da imagem */
+    box-sizing: border-box; /* Garante que a borda não afete o tamanho da imagem */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
+    z-index: 2; /* Garante que a imagem fique acima do fundo */
+}
+
+.header-content {
+    max-width: 50%; /* Limita a largura do texto */
+    margin-right: 150px; /* Espaço entre o texto e a imagem */
+    text-align: left;
+    z-index: 2; /* Garante que o texto fique acima do fundo */
 }
 
 header::before {
@@ -81,6 +102,8 @@ header p {
 }
 
 header button {
+    margin-top: 10px; /* Espaço entre o texto e o botão */
+    align-self: flex-start; /* Garante que o botão fique alinhado à esquerda */
     background: #ffffff;
     color: #1B7A43;
     border: none;
