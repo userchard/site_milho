@@ -63,6 +63,11 @@ nav {
     font-family: Arial, sans-serif; /* Certifique-se de usar uma fonte que suporte pesos finos */
 }
 
+.nav-left .site-name:hover {
+    color: #ffffff; /* Cor do texto ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+}
+
 .nav-center a {
     color: #407e5c; /* Cor dos links (exemplo: verde escuro) */
     text-decoration: none; /* Remove o sublinhado dos links */
