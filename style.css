@@ -63,7 +63,7 @@ header {
 .img-fundo {
     width: 300px; /* Tamanho da imagem */
     height: 300px;
-    object-position: 44% 50%; /* Centraliza a imagem */
+    object-position: 48% 50%; /* Centraliza a imagem */
     object-fit: cover; /* Garante que a imagem fique proporcional */
     margin-left: 100px; /* Espaço entre a imagem e o texto */
     border-radius: 20px; /* Deixa a imagem redonda */
