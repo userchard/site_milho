@@ -121,4 +121,3 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Garante que os elementos visíveis ao carregar a página sejam exibidos
 });
-// (FIM) Adiciona a classe "fade-in" aos elementos que devem aparecer com efeito de fade-in
