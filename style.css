@@ -179,3 +179,9 @@ form button {
 form button:hover {
     background: #14532d;
 }
+
+@media (max-width: 768px) {
+    .img-fundo {
+        display: none; /* Esconde a imagem */
+    }
+}
