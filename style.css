@@ -21,7 +21,7 @@ nav {
     justify-content: center; /* Centraliza os links horizontalmente */
     align-items: center; /* Centraliza os links verticalmente */
     width: 100%; /* Garante que o nav não ultrapasse a largura da tela */
-    height: 50px; /* Altura do menu */
+    height: 80px; /* Altura do menu */
     background: #ffffff; /* Fundo branco */
     color: #407e5c; /* Cor do texto */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
@@ -61,7 +61,7 @@ header {
     color: #ffffff; /* Cor do texto */
     padding: 20px; /* Espaçamento interno */
     width: 100%; /* Garante que o header não ultrapasse a largura da tela */
-    height: 800px; /* Altura do header */
+    height: 840px !important; /* Altura do header */
 }
 
 .img-fundo {
@@ -142,7 +142,7 @@ header button:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
     margin: 20px auto; /* Espaçamento externo e centralização */
     max-width: 100%; /* Largura máxima do card */
-    gap: 150px; /* Espaçamento entre a imagem e o texto */
+    gap: 100px; /* Espaçamento entre a imagem e o texto */
 }
 
 .card-img {
@@ -164,11 +164,14 @@ header button:hover {
 .card-content h2 {
     margin-bottom: 15px; /* Espaçamento abaixo do título */
     color: #1B7A43; /* Cor do título */
+    font-size: 1.8rem; /* Tamanho do título */
+    font-weight: bold; /* Negrito */
 }
 
 .card-content p {
     color: #333; /* Cor do texto */
     line-height: 1.6; /* Melhor espaçamento entre linhas */
+    font-size: 1.1rem; /* Tamanho do texto */
 }
 
 section {
