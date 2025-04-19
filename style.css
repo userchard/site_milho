@@ -42,6 +42,38 @@ nav a:hover {
     color: #2f533f;
 }
 
+.modo-escuro-btn {
+    display: none; /* Esconde o botão por padrão */
+    position: absolute;
+    width: 20px; /* Reduz o tamanho do botão */
+    height: 20px; /* Reduz o tamanho do botão */
+    top: 10px; /* Ajusta a posição vertical */
+    left: 10px; /* Ajusta a posição horizontal */
+    background: #1B7A43;
+    color: #ffffff;
+    border: none;
+    border-radius: 25%; /* Deixa o botão circular */
+    padding: 0; /* Remove o padding interno */
+    font-size: 10px; /* Ajusta o tamanho do emoji */
+    text-align: center; /* Centraliza o emoji horizontalmente */
+    line-height: 22px; /* Centraliza o emoji verticalmente */
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+    transition: background 0.3s, color 0.3s;
+}
+
+.modo-escuro-btn:hover {
+    background: #14532d;
+}
+
+/* Exibe o botão apenas em telas pequenas */
+@media (max-width: 768px) {
+    .modo-escuro-btn {
+        display: block;
+    }
+}
+
 header {
     position: relative;
     display: flex;
