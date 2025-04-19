@@ -26,20 +26,20 @@ nav {
     color: #407e5c; /* Cor do texto */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
     text-align: center; /* Centraliza o texto */
-    font-size: 18px; /* Tamanho da fonte */
+    font-size: 20px; /* Tamanho da fonte */
     position: relative; /* Permite o uso de posicionamento absoluto em elementos filhos */
     z-index: 10; /* Garante que o menu fique acima de outros elementos */
     font-weight: lighter; /* Fonte mais leve */
     overflow: hidden; /* Evita scroll horizontal */
+    flex-direction: row; /* Alinha os itens em uma linha */
 }
 
 nav a {
     color: #407e5c;
-    margin: 0 2rem; /* Reduz as margens horizontais */
+    margin: 0 4rem; /* Reduz as margens horizontais */
     text-decoration: none; /* Remove o sublinhado */
-    padding: 0.5rem 0; /* Adiciona espaçamento interno vertical */
     transition: color 0.3s, text-decoration 0.3s; /* Transição suave para a cor e sublinhado */
-    line-height: 1.5; /* Ajusta o espaçamento vertical do texto */
+    line-height: 1.5rem; /* Ajusta o espaçamento vertical do texto */
 }
 
 nav a:hover {
@@ -255,13 +255,25 @@ form button:hover {
     background: #14532d;
 }
 
+/* Ajustes para telas menores que 768px */
 @media (max-width: 768px) {
     .img-fundo {
-        display: none; /* Esconde a imagem */
+        display: none; /* Esconde a imagem de fundo */
     }
-    nav a {
-        font-size: 12px; /* Diminui o tamanho da fonte */
-        margin: 0 1rem; /* Reduz as margens horizontais */
+
+    .card-img {
+        display: block !important; /* Garante que a imagem do card seja exibida */
+        width: 80%; /* Ajusta a largura para telas pequenas */
+        margin: 10px auto; /* Centraliza a imagem */
+    }
+
+    .card {
+        flex-direction: column; /* Empilha o texto e a imagem */
+        gap: 10px; /* Reduz o espaçamento entre os elementos */
+    }
+
+    .card-content {
+        text-align: center; /* Centraliza o texto */
     }
 }
 
