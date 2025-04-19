@@ -12,30 +12,34 @@ body {
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth; /* Faz o scroll suave */
 }
 
 nav {
-    display: flex;
+    display: flex; /* Flexbox para organizar os itens */
     flex-wrap: wrap; /* Permite que os links quebrem linha */
-    justify-content: center; /* Centraliza os links */
+    justify-content: center; /* Centraliza os links horizontalmente */
+    align-items: center; /* Centraliza os links verticalmente */
     width: 100%; /* Garante que o nav não ultrapasse a largura da tela */
-    background: #ffffff;
-    color: #407e5c;
+    height: 50px; /* Altura do menu */
+    background: #ffffff; /* Fundo branco */
+    color: #407e5c; /* Cor do texto */
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-    padding: 0.5rem;
-    text-align: center;
-    font-size: 0.9rem;
-    position: sticky;
-    font-weight: lighter;
+    text-align: center; /* Centraliza o texto */
+    font-size: 18px; /* Tamanho da fonte */
+    position: relative; /* Permite o uso de posicionamento absoluto em elementos filhos */
+    z-index: 10; /* Garante que o menu fique acima de outros elementos */
+    font-weight: lighter; /* Fonte mais leve */
     overflow: hidden; /* Evita scroll horizontal */
 }
 
 nav a {
     color: #407e5c;
-    margin: 0 1rem; /* reduzir as margens horizontais */
+    margin: 0 2rem; /* Reduz as margens horizontais */
     text-decoration: none; /* Remove o sublinhado */
-    padding: 0.5rem 1rem; /* Adiciona espaçamento interno */
+    padding: 0.5rem 0; /* Adiciona espaçamento interno vertical */
+    transition: color 0.3s, text-decoration 0.3s; /* Transição suave para a cor e sublinhado */
+    line-height: 1.5; /* Ajusta o espaçamento vertical do texto */
 }
 
 nav a:hover {
@@ -51,9 +55,9 @@ header {
     align-items: center; /* Centraliza verticalmente o conteúdo */
     text-align: center; /* Centraliza o texto */
     margin: 0 auto; /* Centraliza o header na tela */
-    background: url(img\ header/img_fundo_milho.png) no-repeat;
+    background: url(img\ header/foto-plant-milho-2.webp) no-repeat;
     background-size: cover; /* Faz a imagem cobrir todo o header */
-    background-position: 50% 1%; /* Ajusta a posição horizontal e vertical */
+    background-position: 50% 75%; /* Ajusta a posição horizontal e vertical */
     color: #ffffff; /* Cor do texto */
     padding: 20px; /* Espaçamento interno */
     width: 100%; /* Garante que o header não ultrapasse a largura da tela */
@@ -63,7 +67,7 @@ header {
 .img-fundo {
     width: 300px; /* Tamanho da imagem */
     height: 300px;
-    object-position: 48% 50%; /* Centraliza a imagem */
+    object-position: 44% 50%; /* Centraliza a imagem */
     object-fit: cover; /* Garante que a imagem fique proporcional */
     margin-left: 100px; /* Espaço entre a imagem e o texto */
     border-radius: 20px; /* Deixa a imagem redonda */
@@ -186,6 +190,10 @@ form button:hover {
     .img-fundo {
         display: none; /* Esconde a imagem */
     }
+    nav a {
+        font-size: 12px; /* Diminui o tamanho da fonte */
+        margin: 0 1rem; /* Reduz as margens horizontais */
+    }
 }
 
 /* Estilos para o modo escuro */
@@ -200,7 +208,7 @@ form button:hover {
 }
 
 .modo-escuro nav a {
-    color: #a8d5ba; /* Links com tom claro */
+    color: #e0e0e0; /* Links com tom claro */
 }
 
 .modo-escuro nav a:hover {
