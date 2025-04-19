@@ -459,6 +459,30 @@ footer {
 
 /* Ajustes para telas menores que 768px */
 @media (max-width: 768px) {
+    .header-content {
+        text-align: left !important; /* Força o alinhamento à esquerda */
+        margin: 0 20px !important; /* Define margens laterais consistentes */
+        display: flex !important; /* Usa Flexbox para organizar os itens */
+        flex-direction: column !important; /* Organiza os itens em coluna */
+        align-items: flex-start !important; /* Alinha os itens à esquerda */
+        justify-content: flex-start; /* Garante que os itens fiquem no topo */
+    }
+
+    .header-content h1 {
+        font-size: 1.5rem !important; /* Ajusta o tamanho do título para telas pequenas */
+        margin-bottom: 10px !important; /* Espaçamento abaixo do título */
+    }
+
+    .header-content p {
+        font-size: 1rem !important; /* Ajusta o tamanho do parágrafo */
+        margin-bottom: 15px !important; /* Espaçamento abaixo do parágrafo */
+    }
+
+    .header-content button {
+        margin-top: 10px !important; /* Adiciona espaçamento acima do botão */
+        align-self: flex-start !important; /* Garante que o botão fique alinhado à esquerda */
+    }
+
     .img-fundo {
         display: none; /* Esconde a imagem de fundo */
     }
