@@ -64,3 +64,25 @@ ajustarHeader();
 
 // Adiciona um listener para ajustar o layout ao redimensionar a janela
 window.addEventListener('resize', ajustarHeader);
+
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+    const toggleButton = document.getElementById("modo-escuro-toggle");
+
+    // Verifica se o modo escuro está ativado no localStorage
+    if (localStorage.getItem("modo-escuro") === "true") {
+        body.classList.add("modo-escuro");
+    }
+
+    // Alterna entre modo claro e escuro ao clicar no botão
+    toggleButton.addEventListener("click", function () {
+        body.classList.toggle("modo-escuro");
+
+        // Salva a preferência no localStorage
+        if (body.classList.contains("modo-escuro")) {
+            localStorage.setItem("modo-escuro", "true");
+        } else {
+            localStorage.setItem("modo-escuro", "false");
+        }
+    });
+});
