@@ -95,3 +95,55 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    const body = document.body;
+
+    // Função para ativar o modo escuro
+    function aplicarModoEscuro() {
+        body.classList.add("modo-escuro");
+    }
+
+    // Função para desativar o modo escuro
+    function removerModoEscuro() {
+        body.classList.remove("modo-escuro");
+    }
+
+    // Detecta a preferência do usuário
+    const preferenciaEscura = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Aplica o modo escuro se a preferência for "dark"
+    if (preferenciaEscura.matches) {
+        aplicarModoEscuro();
+    }
+
+    // Adiciona um listener para mudanças na preferência do sistema
+    preferenciaEscura.addEventListener("change", (e) => {
+        if (e.matches) {
+            aplicarModoEscuro();
+        } else {
+            removerModoEscuro();
+        }
+    });
+});
+
+// Adiciona a classe "fade-in" aos elementos que devem aparecer com efeito de fade-in
+document.addEventListener("DOMContentLoaded", function () {
+    const fadeElements = document.querySelectorAll(".fade-in");
+
+    function handleScroll() {
+        fadeElements.forEach((el) => {
+            const rect = el.getBoundingClientRect();
+            const isVisible = rect.top < window.innerHeight && rect.bottom > 0;
+
+            if (isVisible) {
+                el.classList.add("show");
+            }
+        });
+    }
+
+    // Executa a função ao carregar a página e ao rolar
+    window.addEventListener("scroll", handleScroll);
+    handleScroll(); // Garante que os elementos visíveis ao carregar a página sejam exibidos
+});
+// (FIM) Adiciona a classe "fade-in" aos elementos que devem aparecer com efeito de fade-in
