@@ -1,298 +1,172 @@
-/* Estilo base */
-* {
-    box-sizing: border-box;
-}
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Como Exportar Batatas</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <nav>
+        <a href="#introducao">Introdução</a>
+        <a href="#passos">Passos</a>
+        <a href="#dicas">Dicas</a>
+        <a href="#contato">Contato</a>
+    </nav>
 
-body {
-    font-family: Arial, sans-serif;
-    line-height: 1.6;
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+    <header>
+        <div class="header-content">
+            <h1>Guia Completo para Exportação de Milho</h1>
+            <p>Tudo o que você precisa saber para começar a exportar com sucesso.</p>
+            <button onclick="window.location.href='#introducao'">Saiba Mais</button>
+        </div>
+        <img src="img header/moça-milho-2.png" alt="Imagem de fundo com milho" class="img-fundo">
+    </header>
 
-html {
-    scroll-behavior: smooth; /* Faz o scroll suave */
-}
+    <div class="container">
+        <div class="fade-in">
+            <section id="introducao">
+                <div class="card">
+                    <div class="card-content">
+                        <h2>🌾 Conectando o Campo ao Mundo</h2>
+                        <p>Você já imaginou seu produto <strong>ultrapassando fronteiras e conquistando o mundo?</strong> Exportar pode parecer um desafio repleto de burocracia e informações complexas, mas estamos aqui para tornar esse processo simples, acessível e, acima de tudo, lucrativo para você. Se você é um pequeno ou médio agricultor e deseja entrar no comércio internacional, está no lugar certo!</p>
+                    </div>
+                    <img src="img header/navio-brazil-china.png" alt="Campo de Milho" class="card-img">
+                </div>
+            </section>
+        </div>
 
-nav {
-    display: flex; /* Flexbox para organizar os itens */
-    flex-wrap: wrap; /* Permite que os links quebrem linha */
-    justify-content: center; /* Centraliza os links horizontalmente */
-    align-items: center; /* Centraliza os links verticalmente */
-    width: 100%; /* Garante que o nav não ultrapasse a largura da tela */
-    height: 50px; /* Altura do menu */
-    background: #ffffff; /* Fundo branco */
-    color: #407e5c; /* Cor do texto */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3);
-    text-align: center; /* Centraliza o texto */
-    font-size: 18px; /* Tamanho da fonte */
-    position: relative; /* Permite o uso de posicionamento absoluto em elementos filhos */
-    z-index: 10; /* Garante que o menu fique acima de outros elementos */
-    font-weight: lighter; /* Fonte mais leve */
-    overflow: hidden; /* Evita scroll horizontal */
-}
+        <section id="passos">
+            <h2 class="fade-in">Descomplicando a exportação</h2>
+            <p class="fade-in">Nós sabemos que o universo da exportação pode parecer cheio de <span class="destaque">termos complicados</span>, <span class="destaque">papeladas</span> e <span class="destaque">exigências</span>. E sabemos também que, muitas vezes, falta <span class="destaque">apoio</span>, <span class="destaque">orientação</span> e <span class="destaque">confiança</span> para dar o primeiro passo.</p>
+            <p class="fade-in">Por isso, nossa proposta é <span class="destaque">simples</span> e <span class="destaque">ousada</span>:
+            <br><strong>Fazer da exportação uma realidade acessível, prática e vantajosa para quem planta e colhe com as próprias mãos.</strong></p>
 
-nav a {
-    color: #407e5c;
-    margin: 0 2rem; /* Reduz as margens horizontais */
-    text-decoration: none; /* Remove o sublinhado */
-    padding: 0.5rem 0; /* Adiciona espaçamento interno vertical */
-    transition: color 0.3s, text-decoration 0.3s; /* Transição suave para a cor e sublinhado */
-    line-height: 1.5; /* Ajusta o espaçamento vertical do texto */
-}
+            <h2 class="fade-in">Como funciona?</h2>
+            <p class="fade-in">Nossa plataforma foi criada para ser a estrada descomplicada que conecta seu campo ao mercado internacional.</p>
+            <h4 class="fade-in">Você encontra aqui:</h4>
+            <p class="fade-in">🔎 Guia completo para exportação de milho com tudo o que você precisa saber para exportar o seu cereal.
+                <br>📊 Análises de mercado por país. Descubra onde há mais demanda, quais são os preços praticados, o que os consumidores procuram, e como seu produto pode se destacar.
+                <br>📦 Explicações simples sobre logística e documentação sem termos técnicos complicados. Tudo explicado de forma direta, com exemplos reais.
+                <br>🤝 Orientações sobre certificações e parceiros comerciais. Saiba onde e como conseguir as certificações que aumentam o valor do seu produto lá fora. Conheça plataformas e eventos para fazer negócios diretamente com compradores internacionais.
+            </p>
 
-nav a:hover {
-    text-decoration: wavy;
-    color: #2f533f;
-}
+            <h2 class="fade-in">Essa plataforma é sua.</h2>
+            <p class="fade-in">Você trabalha com a terra, entende o tempo, conhece a força da semente e o valor da colheita. Agora, é hora de colher novos frutos.
+                <br>Aqui, você vai encontrar o caminho para exportar com clareza, apoio e confiança.
+                <br>Sem mistério. Sem complicação. Do seu jeito, com o seu saber.
+            </p>
 
-header {
-    position: relative;
-    display: flex;
-    flex-direction: row; /* Alinha os elementos em uma linha */
-    justify-content: center; /* Centraliza horizontalmente o conteúdo */
-    align-items: center; /* Centraliza verticalmente o conteúdo */
-    text-align: center; /* Centraliza o texto */
-    margin: 0 auto; /* Centraliza o header na tela */
-    background: url(img\ header/foto-plant-milho-2.webp) no-repeat;
-    background-size: cover; /* Faz a imagem cobrir todo o header */
-    background-position: 50% 60%; /* Ajusta a posição horizontal e vertical */
-    color: #ffffff; /* Cor do texto */
-    padding: 20px; /* Espaçamento interno */
-    width: 100%; /* Garante que o header não ultrapasse a largura da tela */
-    height: 800px; /* Altura do header */
-}
+            <h2 class="fade-in">🚀 Como Exportar Milho em 6 Passos Simples:</h2>
+            <ul class="fade-in">
+                <h3>1. Regularize sua produção</h3>
+                <p>Garanta que sua produção esteja dentro das normas da ANVISA, MAPA (Ministério da Agricultura) e Receita Federal. <br>É importante ter:</p>
+                    <ul>
+                        <li>CNPJ ativo (pode ser MEI, EIRELI, etc.)</li>
+                        <li>Inscrição estadual e municipal</li>
+                        <li>Registro no Sistema de Vigilância Agropecuária Internacional (VIGIAGRO)</li>
+                    </ul>
+            </ul>
 
-.img-fundo {
-    width: 300px; /* Tamanho da imagem */
-    height: 300px;
-    object-position: 44% 50%; /* Centraliza a imagem */
-    object-fit: cover; /* Garante que a imagem fique proporcional */
-    margin-left: 100px; /* Espaço entre a imagem e o texto */
-    border-radius: 20px; /* Deixa a imagem redonda */
-    border: 4px solid #ffffff; /* Borda branca ao redor da imagem */
-    box-sizing: border-box; /* Garante que a borda não afete o tamanho da imagem */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Adiciona uma sombra */
-    z-index: 2; /* Garante que a imagem fique acima do fundo */
-}
+            <ul class="fade-in">
+                <h3>2. Consiga a certificação fitossanitária</h3>
+                <p>Antes de exportar, seu milho precisa estar livre de pragas e doenças. <br>Isso é comprovado com:</p>
+                    <ul>
+                        <li>Fitossanitário Internacional (CFI) emitido pelo MAPA.</li>
+                    </ul>
+            </ul>
 
-.header-content {
-    max-width: 50%; /* Limita a largura do texto */
-    margin-right: 150px; /* Espaço entre o texto e a imagem */
-    text-align: left;
-    z-index: 2; /* Garante que o texto fique acima do fundo */
-}
+            <ul class="fade-in">
+                <h3>3. Cadastre-se como exportador</h3>
+                <p>Faça o cadastro no Radar Siscomex, sistema da Receita Federal que libera sua empresa para exportar. <br>Você vai precisar:</p>
+                    <ul>
+                        <li>Certificado Digital (e-CNPJ)</li>
+                        <li>Documentação básica da empresa</li>
+                    </ul>
+            </ul>
 
-header::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.6);
-    z-index: 1;
-}
+            <ul class="fade-in">
+                <h3>4. Encontre compradores internacionais</h3>
+                <p>Você pode vender seu milho para:</p>
+                    <ul>
+                        <li>Tradings (empresas que compram e exportam)</li>
+                        <li>Importadores diretos</li>
+                        <li>Plataformas como Alibaba, Tridge ou B2Brazil</li>
+                    </ul>
+                <p>Se quiser, ajudamos a fazer essa ponte com segurança.</p>
+            </ul>
 
-header h1 {
-    font-size: 2rem;
-    margin-bottom: 1px;
-    z-index: 2;
-}
+            <ul class="fade-in">
+                <h3>5. Negocie e feche contrato de exportação</h3>
+                <p>Depois de encontrar um comprador:</p>
+                    <ul>
+                        <li>Negocie preço, prazos e forma de pagamento (ex: carta de crédito ou adiantamento)</li>
+                        <li>Formalize tudo com um contrato internacional de venda</li>
+                    </ul>
+            </ul>
 
-header p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    z-index: 2;
-}
+            <ul class="fade-in">
+                <h3>6. Organize o envio da carga</h3>
+                <p>Por fim, você precisa:</p>
+                    <ul>
+                        <li>Escolher o transporte (geralmente navio via porto)</li>
+                        <li>Emitir nota fiscal de exportação</li>
+                        <li>Contratar despachante aduaneiro e logística</li>
+                    </ul>
+                <p>E pronto! Agora seu milho está a caminho do mundo</p>
+            </ul>
+        </section>
 
-header button {
-    margin-top: 10px; /* Espaço entre o texto e o botão */
-    align-self: flex-start; /* Garante que o botão fique alinhado à esquerda */
-    background: #ffffff;
-    color: #1B7A43;
-    border: none;
-    padding: 0.5rem 2rem;
-    border-radius: 5px;
-    cursor: pointer;
-    font-size: 1rem;
-    z-index: 2;
-    transition: background 0.3s, color 0.3s; /*transição suave*/
-    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /*sombra do botão*/
-}
+        <section id="dicas">
+            <h2 class="fade-in">Dicas e Cuidados Essenciais na Exportação de Milho</h2>
+                <ul class="fade-in">
+                    <h3>📌 1. Qualidade é tudo</h3>
+                    <p>Antes de pensar em exportar, garanta que o milho esteja bem armazenado, seco e livre de impurezas. Os compradores internacionais exigem padrões de qualidade rigorosos.</p>
+                </ul>
 
-header button:hover {
-    background: #1B7A43;
-    color: #ffffff;
-}
+                <ul class="fade-in">
+                    <h3>🌾 2. Conheça o destino</h3>
+                    <p>Cada país tem exigências diferentes: alguns exigem análises específicas, limites de umidade ou regras fitossanitárias. Sempre verifique as normas do país para onde você vai exportar.</p>
+                </ul>
 
-.container {
-    max-width: 1500px;
-    margin: 0 auto;
-    padding: 20px;
-}
+                <ul class="fade-in">
+                    <h3>🛃 3. Documentação em dia evita dor de cabeça</h3>
+                    <p>Pequenos erros em documentos podem barrar a carga na alfândega. Use modelos validados e, se puder, conte com ajuda de um despachante aduaneiro confiável.</p>
+                </ul>
 
-.card {
-    display: flex; /* Organiza os itens em linha */
-    align-items: center; /* Centraliza verticalmente */
-    background: #ffffff; /* Fundo branco */
-    border-radius: 10px; /* Bordas arredondadas */
-    padding: 20px; /* Espaçamento interno */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
-    margin: 20px auto; /* Espaçamento externo e centralização */
-    max-width: 100%; /* Largura máxima do card */
-    gap: 150px; /* Espaçamento entre a imagem e o texto */
-}
+                <ul class="fade-in">
+                    <h3>💸 4. Atenção ao câmbio e formas de pagamento</h3>
+                    <p>Negocie a moeda (geralmente dólar), evite pagamentos arriscados e prefira carta de crédito ou adiantamento parcial. Isso garante mais segurança na transação.</p>
+                </ul>
 
-.card-img {
-    width: 400px; /* Largura da imagem */
-    height: auto; /* Mantém a proporção da imagem */
-    margin: 0 80px; /* Espaçamento entre a imagem e o texto */
-    border-radius: 20px; /* Bordas arredondadas */
-    object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
-}
+                <ul class="fade-in">
+                    <h3>🤝 5. Não tenha medo de buscar apoio</h3>
+                    <p>Você não precisa fazer tudo sozinho. Existem programas do governo, cooperativas e consultores especializados que podem ajudar — e o nosso site está aqui justamente pra isso.</p>
+                </ul>
+        </section>
 
-.card-content {
-    flex: 1; /* Faz o texto ocupar o restante do espaço */
-    text-align: left; /* Alinha o texto à esquerda */
-    margin: 0 20px; /* Espaçamento interno */
-    padding: 20px; /* Espaçamento interno */
-}
+        <section id="contato">
+            <h2 class="fade-in">Contato</h2>
+            <p class="fade-in">Entre em contato conosco para mais informações sobre exportação de batatas.</p>
+            <form class="fade-in">
+                <label for="nome">Nome:</label>
+                <input type="text" id="nome" name="nome" required>
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <label for="mensagem">Mensagem:</label>
+                <textarea id="mensagem" name="mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </section>
+    </div>
 
-.card-content h2 {
-    margin-bottom: 15px; /* Espaçamento abaixo do título */
-    color: #1B7A43; /* Cor do título */
-}
+    <footer class="fade-in">
+        <p>&copy; 2025. Todos os direitos reservados.</p>
+        <p>Desenvolvido por Richard Barbosa Silva</p>
+    </footer>
 
-.card-content p {
-    color: #333; /* Cor do texto */
-    line-height: 1.6; /* Melhor espaçamento entre linhas */
-}
-
-section {
-    margin-bottom: 2rem;
-}
-
-.destaque {
-    color: #1B7A43; /* Cor de destaque */
-    font-weight: bold;
-}
-
-section h2 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: #1B7A43;
-}
-
-section h3 {
-    font-weight: lighter;
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
-    color: #333;
-}
-
-section h4 {
-    font-size: 1rem;
-    margin-bottom: 0.5rem;
-    color: #1B7A43;
-}
-
-section p, section ul {
-    font-size: 1rem;
-    color: #333;
-}
-
-.fade-in {
-    opacity: 0;
-    transform: translateY(20px); /* Move o elemento ligeiramente para baixo */
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-}
-
-.fade-in.show {
-    opacity: 1;
-    transform: translateY(0); /* Retorna à posição original */
-}
-
-@keyframes fadeIn {
-    to {
-        opacity: 1;
-    }
-}
-
-footer {
-    text-align: center;
-    padding: 1rem;
-    background: #f1f1f1;
-    color: #333;
-}
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-}
-
-form input, form textarea, form button {
-    width: 100%;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-form button {
-    background: #1B7A43;
-    color: #ffffff;
-    border: none;
-    cursor: pointer;
-}
-
-form button:hover {
-    background: #14532d;
-}
-
-@media (max-width: 768px) {
-    .img-fundo {
-        display: none; /* Esconde a imagem */
-    }
-    nav a {
-        font-size: 12px; /* Diminui o tamanho da fonte */
-        margin: 0 1rem; /* Reduz as margens horizontais */
-    }
-}
-
-/* Estilos para o modo escuro */
-.modo-escuro {
-    background-color: #121212; /* Fundo escuro */
-    color: #e0e0e0; /* Texto claro */
-}
-
-.modo-escuro nav {
-    background: #1e1e1e; /* Fundo escuro para o menu */
-    color: #e0e0e0; /* Texto claro */
-}
-
-.modo-escuro nav a {
-    color: #e0e0e0; /* Links com tom claro */
-}
-
-.modo-escuro nav a:hover {
-    color: #81c784; /* Cor mais clara ao passar o mouse */
-}
-
-.modo-escuro header {
-    background: url(img\ header/img_fundo_milho.png) no-repeat;
-    background-size: cover;
-    background-position: 50% 1%;
-    color: #ffffff; /* Texto claro */
-}
-
-.modo-escuro header::before {
-    background: rgba(0, 0, 0, 0.8); /* Escurece o overlay */
-}
-
-.modo-escuro footer {
-    background: #1e1e1e; /* Fundo escuro */
-    color: #e0e0e0; /* Texto claro */
-}
+    <script src="script.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>
