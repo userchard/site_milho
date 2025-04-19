@@ -9,6 +9,7 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    max-width: 100%;
 }
 
 html {
@@ -274,6 +275,17 @@ form button:hover {
 
     .card-content {
         text-align: center; /* Centraliza o texto */
+    }
+
+    nav {
+        flex-direction: row; /* Empilha os links verticalmente */
+        height: 50px; /* Ajusta a altura automaticamente */
+        }
+
+    nav a {
+        font-size: 14px; /* Reduz o tamanho da fonte */
+        margin: 0px 12px; /* Reduz as margens entre os links */
+        text-align: left; /* Centraliza o texto dos links */
     }
 }
 
