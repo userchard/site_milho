@@ -36,7 +36,7 @@ function ajustarHeader() {
 
     if (larguraTela <= 768) {
         // Ajustes para telas menores
-        header.style.flexDirection = 'column'; // Empilha os elementos verticalmente
+        header.style.flexDirection = 'row'; // Empilha os elementos verticalmente
         header.style.height = 'auto'; // Ajusta a altura automaticamente
         headerContent.style.maxWidth = '90%'; // Reduz a largura do texto
         headerContent.style.marginRight = '0'; // Remove o espaço lateral
@@ -65,6 +65,7 @@ ajustarHeader();
 // Adiciona um listener para ajustar o layout ao redimensionar a janela
 window.addEventListener('resize', ajustarHeader);
 
+// (INICIO) Adiciona a classe "modo-escuro" ao body se o usuário preferir o modo escuro
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
 
@@ -95,37 +96,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     });
 });
-
-document.addEventListener("DOMContentLoaded", function () {
-    const body = document.body;
-
-    // Função para ativar o modo escuro
-    function aplicarModoEscuro() {
-        body.classList.add("modo-escuro");
-    }
-
-    // Função para desativar o modo escuro
-    function removerModoEscuro() {
-        body.classList.remove("modo-escuro");
-    }
-
-    // Detecta a preferência do usuário
-    const preferenciaEscura = window.matchMedia("(prefers-color-scheme: dark)");
-
-    // Aplica o modo escuro se a preferência for "dark"
-    if (preferenciaEscura.matches) {
-        aplicarModoEscuro();
-    }
-
-    // Adiciona um listener para mudanças na preferência do sistema
-    preferenciaEscura.addEventListener("change", (e) => {
-        if (e.matches) {
-            aplicarModoEscuro();
-        } else {
-            removerModoEscuro();
-        }
-    });
-});
+// (FIM) Adiciona a classe "modo-escuro" ao body se o usuário preferir o modo escuro
 
 // Adiciona a classe "fade-in" aos elementos que devem aparecer com efeito de fade-in
 document.addEventListener("DOMContentLoaded", function () {
