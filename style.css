@@ -120,16 +120,47 @@ nav {
     pointer-events: auto; /* Permite a interação com o menu */
 }
 
-/* Animação para os itens do menu */
 .menu-list {
     --delay: 0.4s;
     --trdelay: 0.15s;
-    padding: 8px 10px;
-    border-radius: inherit;
-    transition: background-color 0.2s ease, transform 0.4s ease, opacity 0.4s ease;
+    padding: 12px 15px; /* Ajusta o espaçamento interno */
+    border-radius: inherit; /* Mantém o arredondamento do contêiner */
+    transition: background-color 0.2s ease, transform 0.4s ease, opacity 0.4s ease; /* Suaviza as transições */
     position: relative;
     transform: translateY(30px); /* Move os itens para baixo inicialmente */
     opacity: 0; /* Torna os itens invisíveis inicialmente */
+    background-color: white; /* Fundo branco */
+    font-weight: bold; /* Deixa o texto em negrito */
+    color: #407e5c; /* Cor do texto */
+    text-align: left; /* Alinha o texto à esquerda */
+}
+
+.menu-list::after {
+    content: "";
+    position: absolute;
+    top: 100%; /* Posiciona a linha abaixo do item */
+    left: 0; /* Alinha a linha à esquerda */
+    height: 1px; /* Altura da linha */
+    background-color: rgba(64, 126, 92, 0.3); /* Cor da linha */
+    width: 100%; /* Largura total da linha */
+}
+
+.menu-list:hover {
+    background-color: rgba(64, 126, 92, 0.1); /* Fundo mais destacado ao passar o mouse */
+}
+
+.menu-list a {
+    color: #407e5c; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: bold; /* Deixa os links em negrito */
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+    display: block; /* Garante que o link ocupe todo o espaço */
+    width: 100%; /* Garante que o link ocupe toda a largura */
+}
+
+.menu-list a:hover {
+    color: #1B5E20; /* Cor do texto ao passar o mouse */
+    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
 }
 
 /* Exibe os itens do menu com animação */
