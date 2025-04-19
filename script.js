@@ -67,22 +67,31 @@ window.addEventListener('resize', ajustarHeader);
 
 document.addEventListener("DOMContentLoaded", function () {
     const body = document.body;
-    const toggleButton = document.getElementById("modo-escuro-toggle");
 
-    // Verifica se o modo escuro está ativado no localStorage
-    if (localStorage.getItem("modo-escuro") === "true") {
+    // Função para ativar o modo escuro
+    function aplicarModoEscuro() {
         body.classList.add("modo-escuro");
     }
 
-    // Alterna entre modo claro e escuro ao clicar no botão
-    toggleButton.addEventListener("click", function () {
-        body.classList.toggle("modo-escuro");
+    // Função para desativar o modo escuro
+    function removerModoEscuro() {
+        body.classList.remove("modo-escuro");
+    }
 
-        // Salva a preferência no localStorage
-        if (body.classList.contains("modo-escuro")) {
-            localStorage.setItem("modo-escuro", "true");
+    // Detecta a preferência do usuário
+    const preferenciaEscura = window.matchMedia("(prefers-color-scheme: dark)");
+
+    // Aplica o modo escuro se a preferência for "dark"
+    if (preferenciaEscura.matches) {
+        aplicarModoEscuro();
+    }
+
+    // Adiciona um listener para mudanças na preferência do sistema
+    preferenciaEscura.addEventListener("change", (e) => {
+        if (e.matches) {
+            aplicarModoEscuro();
         } else {
-            localStorage.setItem("modo-escuro", "false");
+            removerModoEscuro();
         }
     });
 });
