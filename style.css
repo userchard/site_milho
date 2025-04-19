@@ -57,11 +57,11 @@ header {
     margin: 0 auto; /* Centraliza o header na tela */
     background: url(img\ header/foto-plant-milho-2.webp) no-repeat;
     background-size: cover; /* Faz a imagem cobrir todo o header */
-    background-position: 50% 75%; /* Ajusta a posição horizontal e vertical */
+    background-position: 50% 60%; /* Ajusta a posição horizontal e vertical */
     color: #ffffff; /* Cor do texto */
     padding: 20px; /* Espaçamento interno */
     width: 100%; /* Garante que o header não ultrapasse a largura da tela */
-    height: 400px; /* Altura do header */
+    height: 800px; /* Altura do header */
 }
 
 .img-fundo {
@@ -128,13 +128,56 @@ header button:hover {
 }
 
 .container {
-    max-width: 1200px;
+    max-width: 1500px;
     margin: 0 auto;
     padding: 20px;
 }
 
+.card {
+    display: flex; /* Organiza os itens em linha */
+    align-items: center; /* Centraliza verticalmente */
+    background: #ffffff; /* Fundo branco */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 20px; /* Espaçamento interno */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombra para destacar o card */
+    margin: 20px auto; /* Espaçamento externo e centralização */
+    max-width: 100%; /* Largura máxima do card */
+    gap: 150px; /* Espaçamento entre a imagem e o texto */
+}
+
+.card-img {
+    width: 400px; /* Largura da imagem */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 0 80px; /* Espaçamento entre a imagem e o texto */
+    border-radius: 20px; /* Bordas arredondadas */
+    object-fit: cover; /* Garante que a imagem se ajuste ao espaço */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra para destacar a imagem */
+}
+
+.card-content {
+    flex: 1; /* Faz o texto ocupar o restante do espaço */
+    text-align: left; /* Alinha o texto à esquerda */
+    margin: 0 20px; /* Espaçamento interno */
+    padding: 20px; /* Espaçamento interno */
+}
+
+.card-content h2 {
+    margin-bottom: 15px; /* Espaçamento abaixo do título */
+    color: #1B7A43; /* Cor do título */
+}
+
+.card-content p {
+    color: #333; /* Cor do texto */
+    line-height: 1.6; /* Melhor espaçamento entre linhas */
+}
+
 section {
     margin-bottom: 2rem;
+}
+
+.destaque {
+    color: #1B7A43; /* Cor de destaque */
+    font-weight: bold;
 }
 
 section h2 {
@@ -150,9 +193,32 @@ section h3 {
     color: #333;
 }
 
+section h4 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+    color: #1B7A43;
+}
+
 section p, section ul {
     font-size: 1rem;
     color: #333;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px); /* Move o elemento ligeiramente para baixo */
+    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+
+.fade-in.show {
+    opacity: 1;
+    transform: translateY(0); /* Retorna à posição original */
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
 
 footer {
