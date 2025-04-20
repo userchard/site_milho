@@ -277,48 +277,125 @@ header::before {
 }
 
 header h1 {
-    font-size: 2rem;
-    margin-bottom: 1px;
-    z-index: 2;
+    transition: margin 0.5s ease; /* Suaviza o ajuste do espaçamento */
+}
+
+header h1.subtitle-visible {
+    margin-bottom: 0px; /* Reduz o espaçamento quando o subtítulo aparece */
 }
 
 header p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    z-index: 2;
+    opacity: 0; /* Invisível inicialmente */
+    transform: scale(0.8); /* Reduz o tamanho inicial */
+    transition: opacity 0.8s ease, transform 0.8s ease; /* Suaviza a transição */
+    margin-bottom: 12px;
 }
 
-/* From Uiverse.io by alexmaracinaru */ 
+header p.show {
+    opacity: 1; /* Torna o subtítulo visível */
+    transform: scale(1); /* Retorna ao tamanho original */
+}
+
 button {
     cursor: pointer;
     font-weight: 700;
     transition: all 0.2s;
     padding: 10px 20px;
     border-radius: 100px;
-    background: #ffffff;
     border: 1px solid transparent;
     display: flex;
     align-items: center;
     font-size: 15px;
-  }
+}
   
-  button:hover {
+button:hover {
     background: #2fd479;
-  }
+}
   
-  button > svg {
+button > svg {
     width: 34px;
     margin-left: 10px;
     transition: transform 0.3s ease-in-out;
-  }
+}
   
-  button:hover svg {
+button:hover svg {
     transform: translateX(5px);
-  }
+}
   
-  button:active {
+button:active {
     transform: scale(0.95);
-  }
+}
+
+#continue-button {
+    display: inline-flex; /* Usa Flexbox para alinhar os itens */
+    align-items: center; /* Centraliza verticalmente o texto e o ícone */
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    background-color: #ffffff; /* Cor de fundo */
+    color: rgb(0, 0, 0); /* Cor do texto */
+    border: none; /* Remove a borda */
+    padding: 10px 20px; /* Espaçamento interno */
+    border-radius: 25px; /* Bordas arredondadas */
+    font-size: 1.1rem; /* Tamanho do texto */
+    font-weight: bold; /* Deixa o texto em negrito */
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transition: opacity 0.5s ease, transform 0.3s ease; /* Suaviza a transição de opacidade e escala */
+    gap: 10px; /* Espaçamento entre o texto e o ícone */
+    line-height: 1; /* Garante que o texto não tenha espaçamento extra */
+}
+
+#continue-button span {
+    display: inline-block; /* Garante que o texto seja tratado como um bloco */
+    vertical-align: middle; /* Alinha o texto verticalmente */
+}
+
+#continue-button svg {
+    width: 30px; /* Ajusta o tamanho do ícone */
+    height: 30px; /* Ajusta o tamanho do ícone */
+    transition: transform 0.3s ease-in-out; /* Suaviza a transição ao passar o mouse */
+    vertical-align: middle; /* Alinha o ícone verticalmente */
+}
+
+#continue-button:hover svg {
+    transform: translateX(5px); /* Move o ícone para a direita ao passar o mouse */
+}
+
+#toggle-dark-mode {
+    background-color: #ffffff; /* Cor de fundo do botão */
+    border: none; /* Remove a borda */
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 8px 15px; /* Espaçamento interno */
+    color: #000000; /* Cor do texto */
+    text-decoration: none; /* Remove o sublinhado dos links */
+    font-weight: 600; /* Deixa os links em negrito */
+    font-size: 1rem; /* Ajusta o tamanho da fonte */
+    display: block; /* Garante que o link ocupe todo o espaço */
+    width: 100%; /* Garante que o link ocupe toda a largura */
+    transition: all 0.4s ease;
+}
+
+#toggle-dark-mode:hover {
+    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+}
+
+body.modo-escuro {
+    background-color: #000000; /* Fundo preto */
+    color: #ffffff; /* Texto branco */
+}
+
+body.modo-escuro a {
+    color: #ffffff; /* Links no modo escuro */
+}
+
+body.modo-escuro #toggle-dark-mode {
+    background-color: #000000; /* Fundo do botão no modo escuro */
+    color: #ffffff; /* Texto do botão no modo escuro */
+}
+
+body.modo-escuro #toggle-dark-mode:hover {
+    background-color: #000000; /* Fundo do botão ao passar o mouse no modo escuro */
+}
 
 .container {
     display: flex; /* Flexbox para organizar os itens */
@@ -510,7 +587,13 @@ footer {
     }
 
     .img-fundo {
-        display: none; /* Esconde a imagem de fundo */
+        position: absolute; /* Garante que a imagem fique fixa */
+        right: 50px; /* Define a distância da borda direita */
+        top: 50%; /* Centraliza verticalmente */
+        transform: translateY(-50%); /* Ajusta o alinhamento vertical */
+        width: 300px; /* Define um tamanho fixo para a largura */
+        height: 300px; /* Define um tamanho fixo para a altura */
+        object-fit: cover; /* Garante que a imagem mantenha suas proporções */
     }
 
     .card-img {
@@ -550,39 +633,4 @@ footer {
     .nav-right {
         display: flex; /* Garante que o botão de menu permaneça visível */
     }
-}
-
-/* Estilos para o modo escuro */
-.modo-escuro {
-    background-color: #121212; /* Fundo escuro */
-    color: #e0e0e0; /* Texto claro */
-}
-
-.modo-escuro nav {
-    background: #1e1e1e; /* Fundo escuro para o menu */
-    color: #e0e0e0; /* Texto claro */
-}
-
-.modo-escuro nav a {
-    color: #e0e0e0; /* Links com tom claro */
-}
-
-.modo-escuro nav a:hover {
-    color: #81c784; /* Cor mais clara ao passar o mouse */
-}
-
-.modo-escuro header {
-    background: url(img\ header/img_fundo_milho.png) no-repeat;
-    background-size: cover;
-    background-position: 50% 1%;
-    color: #ffffff; /* Texto claro */
-}
-
-.modo-escuro header::before {
-    background: rgba(0, 0, 0, 0.8); /* Escurece o overlay */
-}
-
-.modo-escuro footer {
-    background: #1e1e1e; /* Fundo escuro */
-    color: #e0e0e0; /* Texto claro */
 }
