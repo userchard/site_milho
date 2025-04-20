@@ -121,3 +121,102 @@ document.addEventListener("DOMContentLoaded", function () {
     window.addEventListener("scroll", handleScroll);
     handleScroll(); // Garante que os elementos visíveis ao carregar a página sejam exibidos
 });
+
+// Adiciona o efeito de transição ao body para o modo escuro
+const toggleDarkMode = document.getElementById('toggle-dark-mode');
+toggleDarkMode.addEventListener('click', () => {
+    document.body.classList.toggle('modo-escuro');
+    toggleDarkMode.innerText = document.body.classList.contains('modo-escuro')
+        ? 'Modo Claro'
+        : 'Modo Escuro';
+});
+ 
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+        });
+    });
+});
+
+// Adiciona o efeito de transição ao menu
+const menuToggle = document.querySelector('.inp');
+const menuContainer = document.querySelector('.menu-container');
+
+menuToggle.addEventListener('change', () => {
+    if (menuToggle.checked) {
+        menuContainer.style.transform = 'translateY(0)';
+        menuContainer.style.opacity = '1';
+    } else {
+        menuContainer.style.transform = 'translateY(-100%)';
+        menuContainer.style.opacity = '0';
+    }
+});
+
+const headerTitle = document.querySelector('header h1');
+const textTitle = 'Guia Completo para Exportação de Milho';
+
+const headerSubtitle = document.querySelector('header p');
+const textSubtitle = 'Tudo o que você precisa saber para começar a exportar com sucesso.';
+
+const continueButton = document.getElementById('continue-button'); // Seleciona o botão "Continue"
+
+let indexTitle = 0;
+let indexSubtitle = 0;
+
+// Adiciona o cursor piscando
+const cursor = document.createElement('span');
+cursor.classList.add('cursor');
+headerTitle.parentNode.appendChild(cursor);
+
+// Função para o efeito de digitação no título
+function typeTitleEffect() {
+    if (indexTitle < textTitle.length) {
+        headerTitle.innerHTML += textTitle.charAt(indexTitle);
+        indexTitle++;
+        setTimeout(typeTitleEffect, 10); // Velocidade da digitação do título
+    } else {
+        cursor.style.display = 'none'; // Remove o cursor após a digitação do título
+        typeSubtitleEffect(); // Inicia o efeito de digitação no subtítulo
+    }
+}
+
+// Função para o efeito de digitação no subtítulo
+function typeSubtitleEffect() {
+    if (indexSubtitle < textSubtitle.length) {
+        headerSubtitle.innerHTML += textSubtitle.charAt(indexSubtitle);
+        indexSubtitle++;
+        setTimeout(typeSubtitleEffect, 5); // Velocidade da digitação do subtítulo
+    } else {
+        headerTitle.classList.add('subtitle-visible'); // Ajusta o espaçamento do título
+        headerSubtitle.classList.add('show'); // Adiciona a classe "show" para o zoom-in
+        showContinueButton(); // Exibe o botão "Continue" após o subtítulo
+    }
+}
+
+// Função para exibir o botão "Continue" de forma suave
+function showContinueButton() {
+    continueButton.style.display = 'block'; // Torna o botão visível
+    setTimeout(() => {
+        continueButton.style.opacity = '10'; // Suaviza a opacidade
+    }, 400); // Pequeno atraso para garantir a transição
+}
+
+// Inicia o efeito de digitação
+typeTitleEffect();
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Seleciona o botão "Continue"
+    const continueButton = document.getElementById('continue-button');
+
+    // Adiciona o evento de clique ao botão
+    continueButton.addEventListener('click', (event) => {
+        event.preventDefault(); // Evita o comportamento padrão do botão
+        const introducaoSection = document.querySelector('#introducao'); // Seleciona a seção "Introdução"
+        introducaoSection.scrollIntoView({
+            behavior: 'smooth', // Rolagem suave
+            block: 'start' // Alinha a seção ao topo da página
+        });
+    });
+});
