@@ -36,17 +36,16 @@ html {
 }
 
 nav {
-    display: flex; /* Usa Flexbox para organizar os itens */
-    justify-content: space-between; /* Espaça os itens entre os lados */
-    align-items: center; /* Centraliza verticalmente os itens */
-    width: 100%; /* Largura total */
-    height: 60px; /* Altura do menu */
-    background: #ffffff; /* Fundo branco */
-    color: #407e5c; /* Cor do texto */
-    box-shadow: 0 0 8px rgba(0, 0, 0, 0.3); /* Sombra */
-    padding: 0 20px; /* Espaçamento interno */
-    position: relative; /* Para posicionamento absoluto de elementos filhos */
-    z-index: 10; /* Garante que o menu fique acima de outros elementos */
+    position: absolute; /* Faz o nav ficar sobreposto ao conteúdo */
+    top: 0;
+    left: 0;
+    width: 100%; /* Faz o nav ocupar toda a largura */
+    background: transparent; /* Remove o fundo */
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem; /* Ajusta o espaçamento interno */
+    align-items: center;
+    z-index: 1000; /* Garante que o nav fique acima de outros elementos */
 }
 
 .nav-right {
@@ -58,18 +57,18 @@ nav {
 }
 
 .nav-left .site-name {
-    color: #407e5c; /* Cor do texto */
-    font-weight: bold; /* Define a fonte como fina */
-    font-family: Arial, sans-serif; /* Certifique-se de usar uma fonte que suporte pesos finos */
+    color: #ffffff; /* Cor do texto padrão */
+    font-weight: bold; /* Deixa o texto em negrito */
+    text-decoration: none; /* Remove o sublinhado */
 }
 
 .nav-left .site-name:hover {
-    color: #ffffff; /* Cor do texto ao passar o mouse */
-    text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+    color: #bcecbf; /* Cor do texto ao passar o mouse */
+    text-decoration: none; /* Garante que o sublinhado não apareça */
 }
 
 .nav-center a {
-    color: #407e5c; /* Cor dos links (exemplo: verde escuro) */
+    color: #ffffff; /* Cor dos links (exemplo: verde escuro) */
     text-decoration: none; /* Remove o sublinhado dos links */
     font-weight: 100; /* Deixa os links em negrito */
     transition: color 0.3s ease; /* Suaviza a transição de cor ao passar o mouse */
@@ -77,16 +76,15 @@ nav {
 }
 
 .nav-center a:hover {
-    color: #1B5E20;
+    color: #bcecbf;
     text-decoration: none;
 }
 
 .main {
-    font-weight: 800;
-    color: #407e5c; /* Cor do texto */
-    background-color: rgb(255, 255, 255);
+    font-weight: 600;
+    color: #ffffff; /* Cor do texto */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
-    padding: 3px 15px;
+    padding: 0px 15px;
     border-radius: 10px;
     display: flex;
     align-items: center;
@@ -103,9 +101,7 @@ nav {
 
 /* Esconde o menu por padrão */
 .menu-container {
-    background-color: white;
-    color: #407e5c; /* Cor do texto */
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
     border-radius: 10px;
     position: absolute;
     width: 100%;
@@ -128,44 +124,32 @@ nav {
 .menu-list {
     --delay: 0.4s;
     --trdelay: 0.15s;
-    padding: 12px 15px; /* Ajusta o espaçamento interno */
+    padding: 0px 15px; /* Ajusta o espaçamento interno */
     border-radius: inherit; /* Mantém o arredondamento do contêiner */
     transition: background-color 0.2s ease, transform 0.4s ease, opacity 0.4s ease; /* Suaviza as transições */
     position: relative;
     transform: translateY(30px); /* Move os itens para baixo inicialmente */
     opacity: 0; /* Torna os itens invisíveis inicialmente */
-    background-color: white; /* Fundo branco */
-    font-weight: bold; /* Deixa o texto em negrito */
-    color: #407e5c; /* Cor do texto */
     text-align: left; /* Alinha o texto à esquerda */
 }
 
-.menu-list::after {
-    content: "";
-    position: absolute;
-    top: 100%; /* Posiciona a linha abaixo do item */
-    left: 0; /* Alinha a linha à esquerda */
-    height: 1px; /* Altura da linha */
-    background-color: rgba(64, 126, 92, 0.3); /* Cor da linha */
-    width: 100%; /* Largura total da linha */
-}
-
-.menu-list:hover {
-    background-color: rgba(64, 126, 92, 0.1); /* Fundo mais destacado ao passar o mouse */
-}
-
 .menu-list a {
-    color: #407e5c; /* Cor do texto */
+    box-shadow: 0 0px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    border-radius: 10px; /* Bordas arredondadas */
+    padding: 8px 15px; /* Espaçamento interno */
+    color: #ffffff; /* Cor do texto */
     text-decoration: none; /* Remove o sublinhado dos links */
-    font-weight: bold; /* Deixa os links em negrito */
+    font-weight: 300; /* Deixa os links em negrito */
     font-size: 1rem; /* Ajusta o tamanho da fonte */
     display: block; /* Garante que o link ocupe todo o espaço */
     width: 100%; /* Garante que o link ocupe toda a largura */
+    transition: all 0.4s ease;
 }
 
 .menu-list a:hover {
-    color: #1B5E20; /* Cor do texto ao passar o mouse */
     text-decoration: none; /* Remove o sublinhado ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
+    font-size: bold; /* Deixa o texto em negrito */
 }
 
 /* Exibe os itens do menu com animação */
@@ -194,6 +178,12 @@ nav {
     width: 20px; /* Largura das barrinhas */
     flex-direction: column; /* Alinha as barrinhas verticalmente */
     gap: 3px; /* Espaçamento entre as barrinhas */
+    transition: all 0.4s ease; /* Suaviza a transição */
+}
+
+.bar:hover {
+    cursor: pointer; /* Muda o cursor ao passar o mouse */
+    transform: scale(1.1); /* Aumenta o tamanho ao passar o mouse */
 }
 
 .bar-list {
@@ -201,7 +191,7 @@ nav {
     width: 100%; /* Largura total da barrinha */
     height: 3px; /* Altura de cada barrinha */
     border-radius: 50px; /* Deixa as barrinhas arredondadas */
-    background-color: #407e5c; /* Cor das barrinhas */
+    background-color: #ffffff; /* Cor das barrinhas */
     transition: all 0.4s; /* Suaviza as transições */
     position: relative; /* Para transformações */
 }
